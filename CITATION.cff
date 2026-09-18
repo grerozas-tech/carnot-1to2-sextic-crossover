@@ -8,6 +8,7 @@ authors:
     affiliation: "Independent Researcher"
 version: "1.0.0"
 date-released: "2026-09-18"
+doi: "10.5281/zenodo.22834130"
 repository-code: "https://github.com/grerozas-tech/carnot-1to2-sextic-crossover"
 license: "CC-BY-4.0"
 keywords:
