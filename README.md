@@ -5,7 +5,7 @@
 **Author:** Gregorio Rozas Fernández  
 **Affiliation:** Independent Researcher  
 **Version:** v1.0.0  
-**Status:** preprint release candidate, September 18, 2026  
+**Status:** public preprint release, September 18, 2026
 **Repository:** https://github.com/grerozas-tech/carnot-1to2-sextic-crossover
 
 ## Overview
@@ -115,4 +115,8 @@ In one sentence:
 
 ## Citation and DOI
 
-A `CITATION.cff` file is included. The version DOI will be added here after the v1.0.0 Zenodo deposit is published.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22834130.svg)](https://doi.org/10.5281/zenodo.22834130)
+
+**Version DOI:** https://doi.org/10.5281/zenodo.22834130
+
+Please cite the Zenodo preprint record together with this repository when referring to the reproducibility package.
