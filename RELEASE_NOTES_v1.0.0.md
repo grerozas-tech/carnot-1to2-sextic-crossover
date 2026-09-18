@@ -24,3 +24,8 @@ Scientific scope of v1.0.0:
 - explicit withdrawal of the earlier subleading axial sextic-isolation claim because detuning-dependent terms enter at the same weighted order.
 
 The exactly quartic-degenerate limit `sigma = 0` and its Stokes/splitting problem are outside the scope of this release.
+## DOI
+
+Zenodo preprint record:
+
+https://doi.org/10.5281/zenodo.22834130
