@@ -1,0 +1,221 @@
+\section{Exact symplectic return and reduced action}
+\label{app:action}
+
+\subsection{Preserved volume and primitive}
+
+Let
+\[
+f
+=
+\cos z\,\partial_x
++
+\sin z\,\partial_y
++
+\left(
+-\frac{x^2}{2}+\frac{y^2}{2}-\mu
+\right)\partial_z.
+\]
+Its divergence vanishes, so
+\[
+\Omega=dx\wedge dy\wedge dz
+\]
+is preserved.
+
+A primitive of \(\iota_f\Omega\) is
+\[
+\boxed{
+\alpha
+=
+-\cos z\,dx+
+\left[
+-\sin z-\frac{x^3}{6}
++x\left(\frac{y^2}{2}-\mu\right)
+\right]dy.
+}
+\]
+Direct differentiation gives
+\[
+\boxed{
+d\alpha=\iota_f\Omega.
+}
+\]
+Moreover,
+\[
+\boxed{
+\alpha(f)
+=
+-1+
+x\sin z
+\left(
+\frac{y^2}{2}-\mu-\frac{x^2}{6}
+\right).
+}
+\]
+
+\subsection{Exact section coordinates}
+
+Use
+\[
+\Sigma=\{x=0,\cos z>0\}
+\]
+and a sufficiently small neighborhood \(U_\Sigma\) of
+\[
+X_\star=(0,y_\star,0).
+\]
+The return map is the local return to this neighborhood.
+
+On the section,
+\[
+\iota_f\Omega|_\Sigma
+=
+\cos z\,dy\wedge dz.
+\]
+Define
+\[
+q=y-y_\star,\qquad
+p=\sin z.
+\]
+Then
+\[
+\boxed{
+\omega_\Sigma=dq\wedge dp.
+}
+\]
+
+Restricting \(\alpha\) gives
+\[
+\alpha_\Sigma=-p\,dq.
+\]
+With
+\[
+\lambda=q\,dp,
+\]
+we have
+\[
+\boxed{
+\lambda=\alpha_\Sigma+d(qp).
+}
+\]
+
+\subsection{Exactness of the return}
+
+Let
+\[
+P(z)=\Phi_{\tau(z)}(z)
+\]
+be the variable-time local return. Using \(d\alpha=\iota_f\Omega\) and Cartan's identity,
+\[
+\mathcal L_f\alpha=d(\alpha(f)).
+\]
+
+Define
+\[
+S_P^\alpha(z)
+=
+\int_0^{\tau(z)}
+\alpha(f)(\Phi_t(z))\,dt.
+\]
+Then
+\[
+P^*\alpha_\Sigma-\alpha_\Sigma=dS_P^\alpha.
+\]
+Hence
+\[
+\boxed{
+P^*\lambda-\lambda=dS_P.
+}
+\]
+
+For \(F=P^2\),
+\[
+\boxed{
+F^*\lambda-\lambda=dS_F.
+}
+\]
+
+\subsection{Relative second-return action}
+
+Let \(z_a,z_b\) be fixed points of \(F\), and let \(\Gamma\) be any path joining them inside the common local-return domain. Define
+\[
+\boxed{
+\mcA_F(z_b,z_a)
+=
+\int_\Gamma(F^*\lambda-\lambda).
+}
+\]
+
+If
+\[
+\Gamma(s)=(q(s),p(s))
+\]
+and
+\[
+F(\Gamma(s))=(q_F(s),p_F(s)),
+\]
+then
+\[
+\boxed{
+\mcA_F
+=
+\int_0^1
+\left[
+q_F\frac{dp_F}{ds}
+-
+q\frac{dp}{ds}
+\right]ds.
+}
+\]
+
+Before using a straight path, all quadrature nodes must be verified to remain in the same local-return domain. Because the integrand is exact, the result is path independent within that domain.
+
+\subsection{Flow-action equivalence}
+
+For a period-two flow orbit \(\gamma_2\) and the primary orbit \(\gamma_\star\),
+\[
+\boxed{
+\mcA_F
+=
+\oint_{\gamma_2}\alpha
+-
+2\oint_{\gamma_\star}\alpha.
+}
+\]
+
+\subsection{Reduced action}
+
+The normal form is constructed for
+\[
+M=-P.
+\]
+After oddification,
+\[
+F=P^2=M^2.
+\]
+If
+\[
+M=\exp(X_K),
+\]
+then
+\[
+F=\exp(2X_K).
+\]
+
+We therefore define
+\[
+\boxed{
+\mcJ=\frac12\mcA_F.
+}
+\]
+
+Using
+\[
+\omega=dq\wedge dp,\qquad
+\iota_{X_K}\omega=dK,
+\]
+one finds that at equilibria
+\[
+\boxed{
+\mcJ(z_b,z_a)=K(z_b)-K(z_a)
+}
+\]
+to the retained normal-form order.

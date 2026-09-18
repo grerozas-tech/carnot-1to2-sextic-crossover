@@ -1,0 +1,140 @@
+\section{Quartic--sextic crossover}
+\label{sec:crossover}
+
+\subsection{Intrinsic crossover variable}
+
+Define
+\[
+\boxed{
+u=\frac{\delta}{\deltax}\ge0.
+}
+\]
+Let
+\[
+R(u)=\frac{1+\sqrt{1+3u}}{2}.
+\]
+Then the scalar model gives
+\begin{equation}
+\boxed{
+\frac{I_E}{I_0^{\rm scalar}}
+=
+R(u).
+}
+\label{eq:R-crossover}
+\end{equation}
+
+\subsection{Normalized action crossover}
+
+Using the scalar residual action,
+\begin{equation}
+\boxed{
+\frac{\mcJ_E}{\mcJ_0^{\rm scalar}}
+=
+4R^3-3R^2.
+}
+\label{eq:action-crossover}
+\end{equation}
+
+For \(u\gg1\), this reproduces the \(3/2\) action law. For \(u\to0\), the normalized scalar action tends to one.
+
+\subsection{Effective action exponent}
+
+Define
+\[
+\nu_{\mcJ}
+=
+\frac{d\log|\mcJ_E|}{d\log\delta}.
+\]
+The scalar model gives
+\[
+\boxed{
+\nu_{\mcJ}
+=
+\frac{3(\sqrt{1+3u}-1)}
+{2\sqrt{1+3u}-1}.
+}
+\]
+Thus
+\[
+\nu_{\mcJ}\to\frac32
+\quad(u\to\infty),
+\qquad
+\nu_{\mcJ}\to0
+\quad(u\to0).
+\]
+
+\subsection{Leading Floquet crossover}
+
+Near the diagonal,
+\[
+H_4
+=
+aI^2+4A\rho^2I^2x^2+\cdots.
+\]
+The physical second-return angle predicted by the scalar reduction is
+\begin{equation}
+\boxed{
+\vartheta_F
+=
+8\rho I_E
+\sqrt{
+A\sqrt{a^2+3G\delta}
+}.
+}
+\label{eq:thetaF}
+\end{equation}
+
+At \(\delta=0\),
+\[
+\vartheta_0^{\rm scalar}
+=
+8\rho I_0^{\rm scalar}\sqrt{A|a|}.
+\]
+Thus
+\[
+\boxed{
+\frac{\vartheta_F}{\vartheta_0^{\rm scalar}}
+=
+R\sqrt{2R-1}.
+}
+\]
+
+For \(u\gg1\),
+\[
+\vartheta_F\asymp\delta^{3/4}.
+\]
+
+\subsection{Parameter-free scalar relations}
+
+Define
+\[
+X=\frac{I_E}{I_0^{\rm scalar}},
+\qquad
+Y=\frac{\mcJ_E}{\mcJ_0^{\rm scalar}},
+\qquad
+Z=\frac{\vartheta_F}{\vartheta_0^{\rm scalar}}.
+\]
+Within the scalar reduction,
+\begin{equation}
+\boxed{
+Y=4X^3-3X^2,
+}
+\label{eq:YX}
+\end{equation}
+and
+\begin{equation}
+\boxed{
+Z=X\sqrt{2X-1}.
+}
+\label{eq:ZX}
+\end{equation}
+
+These are coefficient-independent scalar crossover relations, not exact identities of the complete return-map germ.
+
+\subsection{Corrections beyond the scalar reduction}
+
+The complete sixth-order Hamiltonian is anisotropic:
+\[
+d\neq g,\qquad e\neq f.
+\]
+Therefore the true residual equilibrium is shifted slightly away from the exact diagonal. The scalar crossover curves should consequently be interpreted as leading normalized predictions. Their deviations measure angular sixth-order structure and higher-order terms.

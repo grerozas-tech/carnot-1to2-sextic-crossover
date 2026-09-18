@@ -1,0 +1,286 @@
+\section{Numerical implementation and reproducibility}
+\label{app:numerics}
+
+\subsection{Flow and variational equations}
+
+All computations use
+\[
+\dot X=f(X;\mu),
+\]
+with
+\[
+f=
+\begin{pmatrix}
+\cos z\\
+\sin z\\
+-\frac12x^2+\frac12y^2-\mu
+\end{pmatrix}.
+\]
+The variational equation is
+\[
+\boxed{
+\dot\Phi=Df\,\Phi,\qquad
+\Phi(0)=I_3,
+}
+\]
+where
+\[
+\boxed{
+Df=
+\begin{pmatrix}
+0&0&-\sin z\\
+0&0&\cos z\\
+-x&y&0
+\end{pmatrix}.
+}
+\]
+
+\subsection{Symmetric shooting}
+
+The primary branch is obtained from
+\[
+X(0)=(0,a,0)
+\]
+by imposing
+\[
+\boxed{
+y(T_{1/4})=0,\qquad
+z(T_{1/4})=\frac{\pi}{2}.
+}
+\]
+
+\subsection{Local-return implementation}
+
+The section is
+\[
+\Sigma=\{x=0,\cos z>0\}.
+\]
+Only returns to the prescribed neighborhood \(U_\Sigma\) are accepted. Intermediate global crossings outside that neighborhood are ignored.
+
+\subsection{Event-time corrected derivative}
+
+The embedding is
+\[
+E(q,p)=(0,y_\star+q,\arcsin p),
+\]
+with
+\[
+DE=
+\begin{pmatrix}
+0&0\\
+1&0\\
+0&(1-p^2)^{-1/2}
+\end{pmatrix}.
+\]
+At the event,
+\[
+DC=
+\begin{pmatrix}
+0&1&0\\
+0&0&\cos z_f
+\end{pmatrix}.
+\]
+
+For
+\[
+h(X)=x,\qquad n=(1,0,0)^T,
+\]
+the impact projection is
+\[
+\boxed{
+\Pi_f=I-\frac{f_fn^T}{n^Tf_f}.
+}
+\]
+Hence
+\[
+\boxed{
+DP=DC\,\Pi_f\,\Phi(\tau)\,DE.
+}
+\]
+For \(F=P^2\),
+\[
+\boxed{
+DF(z)=DP(Pz)\,DP(z).
+}
+\]
+
+\subsection{Symplectic and semisimplicity diagnostics}
+
+For each computed orbit record
+\[
+\boxed{
+\varepsilon_P=|\det DP-1|,
+}
+\qquad
+\boxed{
+\varepsilon_F=|\det DF-1|.
+}
+\]
+At the resonant primary orbit also record
+\[
+\boxed{
+\varepsilon_{\rm ss}=\|DP_{\mu_\star}+I\|.
+}
+\]
+The resonance is identified numerically as semisimple only if \(\varepsilon_{\rm ss}\) decreases under increased precision and tighter localization of \(\mu_\star\).
+
+\subsection{Detuning and Floquet quantities}
+
+On the elliptic side,
+\[
+\boxed{
+\delta(\mu)
+=
+\arccos\left(-\frac{\tr DP_\mu(0)}2\right).
+}
+\]
+
+For a hyperbolic fixed point of \(F\),
+\[
+\boxed{
+\kappa_F
+=
+\arcosh\left(\frac{\tr DF}{2}\right).
+}
+\]
+For an elliptic fixed point,
+\[
+\boxed{
+\vartheta_F
+=
+\arccos\left(\frac{\tr DF}{2}\right).
+}
+\]
+
+These are always physical second-return quantities.
+
+\subsection{Exact action computation}
+
+For fixed points \(z_a,z_b\) of \(F\),
+\[
+\boxed{
+\mcJ(z_b,z_a)
+=
+\frac12
+\int_\Gamma(F^*\lambda-\lambda),
+}
+\]
+with
+\[
+\lambda=q\,dp.
+\]
+Before using a straight path \(\Gamma\), every quadrature node is checked to belong to the same local-return branch. The action is also cross-checked against the full-flow primitive formula from \cref{app:action}.
+
+\subsection{Critical jet extraction}
+
+The final critical jet is obtained by direct multiprecision jet transport rather than regression.  The state variables $x,y,z,\sin z,\cos z$ are represented as bivariate polynomials in the initial section coordinates $(q,p)$, truncated at total degree five, and every Taylor time coefficient is propagated with the same polynomial arithmetic.  The initial section embedding uses
+\[
+y(0)=y_\star+q,\qquad z(0)=\arcsin p.
+\]
+After integration to the reference period $T_\star$, the variable event time is written as a polynomial $\tau(q,p)$ and solved degree by degree from
+\[
+x(T_\star+\tau(q,p),q,p)=0.
+\]
+Because $\partial_t x(T_\star,0)=1$, each homogeneous coefficient of $\tau$ is obtained directly from the corresponding event residual.  Substitution into $y$ and $\sin z$ yields the full local-return jet through degree five.
+
+The calculation is repeated with two independent transport settings: maximal Taylor steps $0.22$ and $0.20$, at 55- and 60-digit working precision respectively.  The resulting sextic coefficients agree at the $10^{-5}$ absolute level or better (and $G$ at $1.4\times10^{-6}$), while the nonlinear amplitude chart agrees to better than $4\times10^{-13}$ relatively along the computed crossover branch.
+
+\subsection{Required jet diagnostics}
+
+Record
+\[
+\varepsilon_{\rm parity},
+\]
+the size of parity-forbidden coefficients after oddification;
+\[
+\varepsilon_4=\|\operatorname{div}M_3\|,
+\]
+\[
+\varepsilon_6=\|\operatorname{div}R_5\|,
+\]
+and
+\[
+\varepsilon_\alpha
+=
+\frac{|\alpha_{\rm lin}-\alpha_{\rm bal}|}{\alpha_{\rm lin}}.
+\]
+
+Only coefficient digits stable under all these tests should be printed.
+
+\subsection{Residual exact cycles}
+
+At \(\mu=\mu_\star\), solve
+\[
+F(q,p)-(q,p)=0
+\]
+using the full sixth-order equilibria as seeds.
+
+For the four nonzero roots \(z_j\), store
+\[
+z_j,\quad P(z_j),\quad F(z_j)-z_j,
+\]
+\[
+\vartheta_F,\quad \mcJ,\quad \varepsilon_F.
+\]
+
+The permutation
+\[
+P(z_1)=z_2,\quad P(z_2)=z_1,
+\]
+\[
+P(z_3)=z_4,\quad P(z_4)=z_3
+\]
+must be verified numerically.
+
+\subsection{Crossover continuation}
+
+The invariant crossover campaign uses
+\[
+u=\delta/\deltax
+\]
+at
+\[
+u=
+0,0.01,0.03,0.1,0.3,1,3,10,30,100.
+\]
+The branch is selected by continuation from the residual cycle together with the sixth-order predictor.  This is numerically important because several other fixed points of the second return coexist nearby and a blind Newton iteration may jump to an axial branch.
+
+At every point we record
+\[
+\mcJ,\qquad
+\vartheta_F,
+\]
+together with the exact section coordinates, fixed-point residual, trace, and determinant error.  The independently reconstructed critical canonical map is then applied to each fixed point, giving the normal-form amplitude $I_{\rm NF}=(Q^2+P^2)/2$ used in the amplitude and parameter-free crossover tests.
+
+\subsection{Axial quartic-calibration campaign}
+
+Two interlaced dyadic ladders are used:
+\[
+0.020,\ 0.010,\ 0.005,
+\]
+and
+\[
+0.016,\ 0.008,\ 0.004.
+\]
+At every point we compute
+\[
+\mcJ_Q,\qquad \mcJ_P,
+\]
+\[
+\kappa_{F,Q},\qquad \kappa_{F,P},
+\]
+and form the leading estimators \eqref{eq:E-Aorb}--\eqref{eq:E-rhoorb}.  First-order Richardson extrapolation is
+\[
+\boxed{
+R^{[1]}(\delta)
+=
+2R(\delta/2)-R(\delta).
+}
+\]
+The subleading axial coefficients are archived but are not interpreted as critical-sextic invariants, for the reason explained in \cref{app:axial-contamination}.
+
+\subsection{Precision protocol}
+
+The resonance and residual-cycle audits were repeated in arbitrary precision.  The semisimplicity calculation used up to 120 decimal digits, a Taylor integrator of order 38, and maximal step size \(0.05\).  The objective of the extended precision is not to print excessive digits but to establish stability of the small monodromy and action residuals.
+
+The crossover and axial continuation tables use exact-section action quadrature and event-corrected monodromy, with representative points cross-checked against the arbitrary-precision Taylor integrator.  ODE, event, Newton, and quadrature tolerances are tightened until the displayed observables stabilize.

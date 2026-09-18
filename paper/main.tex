@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\bibliographystyle{abbrvnat}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{numericalresult}{Numerical Result}[section]
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mustar}{\mu_\star}
+\newcommand{\deltax}{\delta_\times}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\arcosh}{\operatorname{arcosh}}
+\newcommand{\bigO}{\mathcal{O}}
+
+\crefname{numericalresult}{Numerical Result}{Numerical Results}
+\Crefname{numericalresult}{Numerical Result}{Numerical Results}
+
+\title{Near-Degenerate Reversible \(1{:}2\) Resonance and Sextic Crossover in a \((2,3,5,7)\) Carnot Geodesic Flow}
+\author{Gregorio Rozas Fernández\\\small Independent Researcher}
+\date{September 18, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study a reversible \(1{:}2\) resonance arising in the reduced normal geodesic flow of a rank-two Carnot structure with growth vector \((2,3,5,7)\). Reduction on generic coadjoint orbits and restriction to unit speed lead to the one-parameter system
+\[
+\dot x=\cos z,\qquad
+\dot y=\sin z,\qquad
+\dot z=-\frac12x^2+\frac12y^2-\mu,
+\]
+whose local Poincaré return is exact symplectic.
+
+Along a symmetric periodic branch we numerically identify a resonance at which the complete monodromy matrix is consistent with
+\[
+DP_{\mu_\star}=-I.
+\]
+After fixing the linear symplectic normalization by the detuning and the reversing symmetry axes, the quartic interpolating Hamiltonian lies extremely close to the factorized form
+\[
+A(Q^2-P^2)^2.
+\]
+The resulting suppression of the quartic restoring term near the diagonal directions promotes the sixth-order Hamiltonian from a perturbative correction to a leading contribution.
+
+This produces two distinct local period-two scales. The axial hyperbolic branches satisfy
+\[
+|\mcJ_H|\asymp\delta^2,
+\]
+whereas the near-diagonal elliptic branch exhibits the intermediate scaling
+\[
+|\mcJ_E|\asymp\delta^{3/2}
+\]
+in the regime
+\[
+\deltax\ll\delta\ll1.
+\]
+
+Because the quartic degeneracy is only approximate, the latter regime crosses over to a finite-amplitude plateau. Direct numerical solution of the exact second-return fixed-point equation at resonance reveals four nonzero fixed points, corresponding to two elliptic period-two cycles of the first return. Their action and Floquet scale agree closely with the sixth-order normal form.
+
+After normalization by the intrinsic crossover scales, the leading scalar reduction yields coefficient-independent algebraic relations among amplitude, action, and stability. The results provide a concrete example of a near-degenerate reversible \(1{:}2\) resonance in which suppression of the quartic diagonal term promotes the sixth-order normal form and generates a measurable two-scale periodic-orbit geometry.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_geometric_reduction}
+\input{sections/03_resonant_branch}
+\input{sections/04_sextic_unfolding}
+\input{sections/05_crossover}
+\input{sections/06_numerics}
+\input{sections/07_discussion}
+\input{sections/08_conclusions}
+
+\appendix
+\input{appendices/A_lie_algebra}
+\input{appendices/B_exact_action}
+\input{appendices/C_normal_form}
+\input{appendices/D_numerics}
+\input{appendices/E_orbital_reconstruction}
+
+\input{references_manual}
+
+\end{document}

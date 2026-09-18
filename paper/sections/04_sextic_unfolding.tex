@@ -1,0 +1,207 @@
+\section{Sextic promotion and two period-two scales}
+\label{sec:sextic}
+
+\subsection{Sixth-order interpolating Hamiltonian}
+
+The next term is
+\begin{equation}
+\boxed{
+H_6
+=
+dQ^6+eQ^4P^2+fQ^2P^4+gP^6.
+}
+\label{eq:H6}
+\end{equation}
+Define
+\begin{equation}
+\boxed{
+G=d+e+f+g.
+}
+\label{eq:G-def}
+\end{equation}
+
+The detuned truncated normal form is
+\begin{equation}
+\boxed{
+K_\delta
+=
+-\delta I+H_4+H_6
++
+\bigO(\delta^2I,\delta I^2,I^4).
+}
+\label{eq:K-detuned}
+\end{equation}
+
+\subsection{Axial hyperbolic branches}
+
+On the \(Q\)-axis,
+\[
+K_Q
+=
+-\delta I+4AI^2+8dI^3+\cdots.
+\]
+Hence
+\[
+I_Q
+=
+\frac{\delta}{8A}
+-
+\frac{3d}{64A^3}\delta^2
++
+\bigO(\delta^3),
+\]
+and
+\begin{equation}
+\boxed{
+\mcJ_Q
+=
+-\frac{\delta^2}{16A}
++
+\frac{d}{64A^3}\delta^3
++
+\bigO(\delta^4).
+}
+\label{eq:JQ}
+\end{equation}
+
+Similarly,
+\begin{equation}
+\boxed{
+\mcJ_P
+=
+-\frac{\delta^2}{16A}
++
+\frac{g}{64A^3}\delta^3
++
+\bigO(\delta^4).
+}
+\label{eq:JP}
+\end{equation}
+Therefore
+\begin{equation}
+\boxed{
+|\mcJ_H|\asymp\delta^2.
+}
+\label{eq:axial-action}
+\end{equation}
+
+The physical second-return exponents satisfy
+\begin{equation}
+\boxed{
+\kappa_{F,Q}
+=
+2\rho\delta
++
+\frac{3d-e}{4A^2\rho}\delta^2
++
+\bigO(\delta^3),
+}
+\label{eq:kappaQ}
+\end{equation}
+and
+\begin{equation}
+\boxed{
+\kappa_{F,P}
+=
+2\rho\delta
++
+\frac{3g-f}{4A^2\rho}\delta^2
++
+\bigO(\delta^3).
+}
+\label{eq:kappaP}
+\end{equation}
+
+\subsection{Near-diagonal scalar reduction}
+
+Along the exact diagonal, \(Q^2=P^2=I\), so the leading scalar model is
+\begin{equation}
+\boxed{
+K_E(I)
+=
+-\delta I+aI^2+GI^3,
+\qquad
+a=A\sigma<0.
+}
+\label{eq:diagonal-scalar}
+\end{equation}
+
+The positive stationary solution is
+\begin{equation}
+\boxed{
+I_E
+=
+\frac{|a|+\sqrt{a^2+3G\delta}}{3G}.
+}
+\label{eq:IE}
+\end{equation}
+
+Define
+\begin{equation}
+\boxed{
+\deltax=\frac{a^2}{G}.
+}
+\label{eq:crossover-scale}
+\end{equation}
+
+For \(\delta\gg\deltax\),
+\[
+I_E\sim\sqrt{\frac{\delta}{3G}},
+\qquad
+r_E\asymp\delta^{1/4}.
+\]
+
+The reduced action is
+\[
+\mcJ_E=-aI_E^2-2GI_E^3,
+\]
+so
+\begin{equation}
+\boxed{
+\mcJ_E
+\sim
+-\frac{2}{3^{3/2}\sqrt G}\delta^{3/2}.
+}
+\label{eq:elliptic-action-scaling}
+\end{equation}
+
+\subsection{Two-scale periodic-orbit geometry}
+
+The axial scale is
+\[
+r_H\asymp\delta^{1/2},
+\]
+whereas the near-diagonal scale is
+\[
+r_E\asymp\delta^{1/4}.
+\]
+Hence
+\[
+\frac{r_E}{r_H}\asymp\delta^{-1/4}.
+\]
+
+Invariantly,
+\[
+\boxed{
+|\mcJ_H|\asymp\delta^2,
+\qquad
+|\mcJ_E|\asymp\delta^{3/2}.
+}
+\]
+
+\subsection{Breakdown of the outer scaling}
+
+Because \(a<0\) is fixed, the sextic power law cannot persist to \(\delta=0\). Instead,
+\[
+I_E\to I_0^{\rm scalar}
+=
+\frac{2|a|}{3G},
+\]
+and
+\[
+\mcJ_E\to
+\mcJ_0^{\rm scalar}
+=
+-\frac{4|a|^3}{27G^2}.
+\]
+The next section describes this crossover.

@@ -1,0 +1,229 @@
+\section{Lie--Poisson reduction and canonical realization}
+\label{app:lie}
+
+\subsection{Graded Lie algebra}
+
+Let
+\[
+\mathfrak n
+=
+\operatorname{span}
+\{P,Q,K,V,U,Y,X\}
+\]
+with nonzero brackets
+\[
+[P,Q]=K,
+\]
+\[
+[P,K]=V,\qquad [Q,K]=U,
+\]
+\[
+[P,U]=X,\qquad [P,V]=Y,
+\]
+\[
+[Q,U]=-Y,\qquad [Q,V]=X.
+\]
+
+The grading is
+\[
+\mathfrak n_1=\operatorname{span}\{P,Q\},\quad
+\mathfrak n_2=\operatorname{span}\{K\},
+\]
+\[
+\mathfrak n_3=\operatorname{span}\{V,U\},\quad
+\mathfrak n_4=\operatorname{span}\{Y,X\},
+\]
+so the growth vector is
+\[
+\boxed{(2,3,5,7).}
+\]
+
+Equivalently,
+\[
+[P,[P,[P,Q]]]+[Q,[Q,[P,Q]]]=0.
+\]
+
+\subsection{Lie--Poisson coordinates}
+
+Let
+\[
+(h_1,h_2,\kappa,v,u,\eta,\xi)
+\]
+be dual to
+\[
+(P,Q,K,V,U,Y,X).
+\]
+
+Using
+\[
+\{\ell_A,\ell_B\}=\ell_{[A,B]},
+\]
+the nonzero brackets are
+\[
+\{h_1,h_2\}=\kappa,
+\]
+\[
+\{h_1,\kappa\}=v,\qquad
+\{h_2,\kappa\}=u,
+\]
+\[
+\{h_1,u\}=\xi,\qquad
+\{h_1,v\}=\eta,
+\]
+\[
+\{h_2,u\}=-\eta,\qquad
+\{h_2,v\}=\xi.
+\]
+
+The central coordinates \(\xi,\eta\) are Casimirs. A third Casimir is
+\begin{equation}
+\boxed{
+\mathcal C
+=
+\kappa(\xi^2+\eta^2)
+-\frac12(v^2-u^2)\eta
+-vu\xi.
+}
+\label{eq:casimir}
+\end{equation}
+
+Thus generic coadjoint orbits are four-dimensional.
+
+\subsection{Rotational reduction and scaling}
+
+Let
+\[
+r=\sqrt{\xi^2+\eta^2}>0.
+\]
+Using the \(SO(2)\) automorphism, choose
+\[
+\xi=r,\qquad \eta=0.
+\]
+Then
+\[
+\mathcal C=\kappa r^2-vur,
+\]
+so
+\[
+\kappa=\frac{\mathcal C}{r^2}+\frac{uv}{r}.
+\]
+
+Under Carnot dilation,
+\[
+h_i\mapsto\lambda h_i,\qquad
+\kappa\mapsto\lambda^2\kappa,
+\]
+\[
+u,v\mapsto\lambda^3(u,v),\qquad
+\xi,\eta\mapsto\lambda^4(\xi,\eta).
+\]
+Since
+\[
+\mathcal C\mapsto\lambda^{10}\mathcal C,
+\]
+choosing \(\lambda=r^{-1/4}\) normalizes the central momentum. The dimensionless parameter is
+\[
+\boxed{
+\mu=\frac{\mathcal C}{r^{5/2}}.
+}
+\]
+Dropping scaled hats,
+\[
+\xi=1,\qquad \eta=0,\qquad
+\boxed{
+\kappa=\mu+uv.
+}
+\]
+
+\subsection{Canonical realization}
+
+Let
+\[
+(u,v,\Pi_u,\Pi_v)
+\]
+be canonical coordinates with
+\[
+\{u,\Pi_u\}=1,\qquad
+\{v,\Pi_v\}=1.
+\]
+
+The realization compatible with the Lie--Poisson convention is
+\[
+\boxed{
+h_1=-\Pi_u,
+}
+\]
+\[
+\boxed{
+h_2=-\Pi_v+\mu u+\frac12u^2v.
+}
+\]
+
+The normal Hamiltonian becomes
+\[
+\boxed{
+H_\mu
+=
+\frac12
+\left[
+\Pi_u^2+
+\left(
+\Pi_v-\mu u-\frac12u^2v
+\right)^2
+\right].
+}
+\]
+
+Define
+\[
+w=\Pi_v-\mu u-\frac12u^2v.
+\]
+Then
+\[
+\dot u=\Pi_u,\qquad
+\dot v=w,
+\]
+\[
+\dot\Pi_u=(\mu+uv)w,\qquad
+\dot\Pi_v=\frac12u^2w.
+\]
+Therefore
+\[
+\boxed{
+\ddot u=(\mu+uv)\dot v,\qquad
+\ddot v=-(\mu+uv)\dot u.
+}
+\]
+
+\subsection{Unit-speed reduction}
+
+On \(H_\mu=\tfrac12\), write
+\[
+\dot u=\cos\phi,\qquad
+\dot v=\sin\phi.
+\]
+Then
+\[
+\boxed{
+\dot\phi=-(\mu+uv).
+}
+\]
+
+Introduce
+\[
+x=\frac{u+v}{\sqrt2},\qquad
+y=\frac{v-u}{\sqrt2},\qquad
+z=\phi-\frac{\pi}{4}.
+\]
+Since
+\[
+uv=\frac{x^2-y^2}{2},
+\]
+the reduced system is
+\[
+\boxed{
+\dot x=\cos z,\qquad
+\dot y=\sin z,\qquad
+\dot z=-\frac{x^2}{2}+\frac{y^2}{2}-\mu.
+}
+\]

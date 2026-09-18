@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the accompanying preprint and repository."
+title: "Near-Degenerate Reversible 1:2 Resonance and Sextic Crossover in a (2, 3, 5, 7) Carnot Geodesic Flow"
+type: article
+authors:
+  - family-names: "Rozas Fernández"
+    given-names: "Gregorio"
+    affiliation: "Independent Researcher"
+version: "1.0.0"
+date-released: "2026-09-18"
+repository-code: "https://github.com/grerozas-tech/carnot-1to2-sextic-crossover"
+license: "CC-BY-4.0"
+keywords:
+  - reversible 1:2 resonance
+  - Carnot geodesic flow
+  - exact symplectic map
+  - Poincare return
+  - Hamiltonian normal form
+  - sextic normal form
+  - periodic orbits
+  - crossover
+  - sub-Riemannian geometry

@@ -1,0 +1,228 @@
+\section{Orbital calibration and sextic consistency tests}
+\label{app:orbital}
+
+\subsection{Leading quartic information from axial actions}
+
+Both axial period-two families satisfy
+\[
+\mcJ_H
+=
+-\frac{\delta^2}{16A}
++\bigO(\delta^3).
+\]
+With
+\[
+\bar{\mcJ}
+=
+\frac{\mcJ_Q+\mcJ_P}{2},
+\]
+define
+\begin{equation}
+\boxed{
+A_{\rm orb}(\delta)
+=
+-\frac{\delta^2}{16\bar{\mcJ}}.
+}
+\label{eq:E-Aorb}
+\end{equation}
+Then
+\[
+A_{\rm orb}(\delta)=A+\bigO(\delta).
+\]
+This relation uses only the exact reduced symplectic actions of the axial periodic orbits.
+
+\subsection{Leading quartic angular coefficient from physical Floquet exponents}
+
+For the physical second return $F=P^2$,
+\[
+\kappa_{F,Q}=2\rho\delta+\bigO(\delta^2),
+\qquad
+\kappa_{F,P}=2\rho\delta+\bigO(\delta^2).
+\]
+Hence
+\begin{equation}
+\boxed{
+\rho_{\rm orb}(\delta)
+=
+\frac{\kappa_{F,Q}+\kappa_{F,P}}{4\delta}
+=
+\rho+\bigO(\delta).
+}
+\label{eq:E-rhoorb}
+\end{equation}
+The corresponding orbital near-degeneracy parameter is
+\[
+\boxed{
+\sigma_{\rm orb}=4-\rho_{\rm orb}^2.
+}
+\]
+Once $A_{\rm orb}$ and $\rho_{\rm orb}$ are known, the quartic mixed coefficient can also be reconstructed as
+\[
+\boxed{
+B_{\rm orb}
+=A_{\rm orb}\left(2-\rho_{\rm orb}^2\right).
+}
+\]
+
+\subsection{Richardson extrapolation}
+
+If
+\[
+R(\delta)=R_\star+c_1\delta+\bigO(\delta^2),
+\]
+then the first Richardson transform
+\begin{equation}
+\boxed{
+R^{[1]}(\delta)
+=2R(\delta/2)-R(\delta)
+}
+\label{eq:E-richardson}
+\end{equation}
+removes the leading linear correction.  We apply \eqref{eq:E-richardson} to $A_{\rm orb}$ and $\rho_{\rm orb}$ on two interlaced dyadic ladders.  The convergence displayed in \cref{tab:orbital-quartic} provides an orbital validation of the quartic near-degeneracy.
+
+\subsection{Why the subleading axial channel is not a critical-sextic invariant}
+\label{app:axial-contamination}
+
+A crucial point is that the detuned normal form is not exhausted by
+\[
+-\delta I+H_4+H_6.
+\]
+At the order relevant to the first subleading axial corrections one must retain
+\begin{equation}
+\boxed{
+K_\delta
+=
+-\delta I
++H_4
++H_6
++\delta H_{4,1}
++\gamma\delta^2 I
++\bigO(\delta^3I,\delta^2I^2,\delta I^3,I^4),
+}
+\label{eq:E-extended-detuning}
+\end{equation}
+where $H_{4,1}$ is a quartic polynomial describing the first detuning derivative of the quartic germ in the chosen parameter-dependent normalization.
+
+On an axial branch,
+\[
+I=\bigO(\delta).
+\]
+Therefore
+\[
+H_6=\bigO(\delta^3),
+\qquad
+\delta H_{4,1}=\bigO(\delta^3),
+\qquad
+\gamma\delta^2I=\bigO(\delta^3).
+\]
+The cubic action coefficient is thus not determined by $H_6$ alone.  The same contamination occurs in the $\delta^2$ correction to the physical Floquet exponent, because the Hessians of $\delta H_{4,1}$ and $\gamma\delta^2I$ contribute at precisely that order.
+
+Consequently, formulas that attempt to infer the critical coefficients $d,e,f,g$ from the subleading axial action and Floquet coefficients while omitting $H_{4,1}$ and the quadratic detuning term are not valid in general.  The exact-return campaign detects this directly: the leading limits \eqref{eq:E-Aorb}--\eqref{eq:E-rhoorb} converge as expected, whereas the subleading coefficients are not described by the frozen critical sextic tensor alone.
+
+This does not invalidate the critical Hamiltonian $H_6$.  It only means that a subleading \emph{detuned} axial reconstruction requires the parameter-dependent jet through the same weighted order.  We therefore do not use the axial subleading channel to estimate $G$ or the sextic anisotropy in the final paper.
+
+\subsection{Elliptic action reconstruction of the diagonal sextic coefficient}
+
+The near-diagonal scalar reduction is
+\[
+K_E(I)
+=-\delta I+aI^2+GI^3,
+\qquad
+a=A\sigma<0.
+\]
+At an equilibrium,
+\[
+-\delta+2aI+3GI^2=0,
+\]
+while the reduced action is
+\[
+\mcJ_E=-aI^2-2GI^3.
+\]
+Eliminating $G$ gives
+\[
+3\mcJ_E=aI^2-2\delta I.
+\]
+The physical positive solution is
+\begin{equation}
+\boxed{
+I
+=
+\frac{\delta-\sqrt{\delta^2+3a\mcJ_E}}{a},
+}
+\label{eq:E-I-from-action}
+\end{equation}
+and therefore
+\begin{equation}
+\boxed{
+G_{\rm ell}
+=
+\frac{\delta-2aI}{3I^2}.
+}
+\label{eq:E-Gell}
+\end{equation}
+
+Unlike the contaminated axial subleading coefficients, this reconstruction is tested in the distinguished near-diagonal regime where
+\[
+I=\bigO(\delta^{1/2})
+\]
+in the outer sextic scaling.  There
+\[
+H_6=\bigO(\delta^{3/2}),
+\]
+whereas
+\[
+\delta H_{4,1}=\bigO(\delta^2),
+\]
+so the sextic term is asymptotically promoted ahead of the first detuning-dependent quartic correction.  This ordering is precisely what makes the near-diagonal branch the cleaner dynamical probe of $G$.
+
+The exact-return values of $G_{\rm ell}$ are listed in \cref{tab:Gell}.  In the inner crossover region they agree with the frozen critical-jet value at the $10^{-3}$ level or better, with the expected gradual drift at larger detuning.
+
+\subsection{Residual action and Floquet consistency}
+
+At $\delta=0$ the residual exact cycle supplies an additional, independent sixth-order check.  Its reduced action is
+\[
+\mcJ_0^{\rm exact}
+=-1.69102354131\times10^{-13},
+\]
+while the scalar frozen-coefficient prediction is
+\[
+\mcJ_0^{\rm scalar}
+=-1.69009171482\times10^{-13}.
+\]
+The physical second-return angle is
+\[
+\vartheta_F^{\rm exact}
+=1.62684506536\times10^{-4},
+\]
+compared with
+\[
+\vartheta_0^{\rm scalar}
+=1.62689147576\times10^{-4}.
+\]
+Thus both invariant observables lie extremely close to the frozen sixth-order crossover endpoint.
+
+\subsection{Logical hierarchy after the numerical audit}
+
+The orbital information is therefore used in the following hierarchy:
+\[
+\boxed{
+\text{leading axial action}\longrightarrow A,
+}
+\]
+\[
+\boxed{
+\text{leading axial Floquet exponent}\longrightarrow\rho,
+}
+\]
+\[
+\boxed{
+\text{near-diagonal action crossover}\longrightarrow G,
+}
+\]
+while
+\[
+\boxed{
+\text{subleading axial coefficients}
+}
+\]
+are treated as mixed information involving both the critical sextic jet and detuning-dependent normal-form coefficients.  This separation is the convention used in the final numerical analysis.

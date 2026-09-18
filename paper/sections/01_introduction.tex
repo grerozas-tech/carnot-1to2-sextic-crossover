@@ -1,0 +1,93 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Resonances of area-preserving and reversible maps provide a natural setting in which local bifurcation theory, Hamiltonian normal forms, and periodic-orbit geometry interact. Among the simplest nontrivial cases is the \(1{:}2\) resonance, characterized by a double multiplier \(-1\) of the Poincaré return. At the resonant parameter, the square of the return is tangent to the identity, so that nonlinear terms determine the local organization of nearby periodic orbits.
+
+Reversibility adds further structure. Symmetric periodic orbits intersect fixed sets of reversing involutions, and the corresponding symmetry lines provide a natural framework for locating and classifying bifurcating branches \cite{Sevryuk1986,LambRoberts1998}. In the area-preserving setting, normal forms near neutral multipliers \(+1\) and \(-1\) were studied systematically by Gelfreich and Gelfreikh \cite{GelfreichGelfreikh2010}. Near a semisimple multiplier \(-1\), the return admits a formal odd normal form, so that after changing sign one obtains a near-identity exact symplectic map described by an even interpolating Hamiltonian. Interpolating Hamiltonians have long been used to study resonant geometry and stability in conservative maps \cite{BazzaniEtAl1993}.
+
+The system considered here arises from the normal geodesic flow of a rank-two, seven-dimensional Carnot structure with growth vector
+\[
+(2,3,5,7).
+\]
+The corresponding nilpotent algebra and its sub-Riemannian geodesic problem have previously appeared in the literature. In particular, Kruglikov, Vollmer, and Lukes-Gerakopoulos \cite{KruglikovVollmerLukesGerakopoulos2017} study the same structure, its coadjoint invariants, and questions of polynomial integrability. General background on sub-Riemannian extremals, left-invariant Hamiltonian systems, and coadjoint reduction may be found in \cite{AgrachevSachkov2004,AgrachevBarilariBoscain2019}.
+
+Our starting point is therefore not a new Carnot algebra. The contribution begins with the reduced dynamics on its generic coadjoint orbits and, specifically, with a resonant periodic family that has not previously been analyzed in this form.
+
+After rotational reduction, Carnot scaling, and restriction to unit speed, the geodesic equations reduce to
+\begin{equation}
+\boxed{
+\dot x=\cos z,\qquad
+\dot y=\sin z,\qquad
+\dot z=-\frac12x^2+\frac12y^2-\mu.
+}
+\label{eq:intro-reduced-flow}
+\end{equation}
+The parameter \(\mu\) is the scale-invariant combination of the coadjoint Casimirs. The flow preserves volume and induces an exact symplectic local Poincaré map on the section \(x=0\).
+
+Continuation of a primary symmetric periodic orbit numerically locates a \(1{:}2\) resonance at
+\[
+\mu=\mu_\star\simeq0.662869.
+\]
+At the corresponding parameter, the full monodromy matrix is numerically consistent with
+\[
+DP_{\mu_\star}=-I.
+\]
+
+The distinctive feature appears after fixing the linear canonical normalization by two pieces of information: the infinitesimal detuning and the tangent fixed sets of the two reversing involutions. In this fixed reversible chart the leading nonlinear Hamiltonian is
+\[
+H_4=A(Q^4+P^4)+BQ^2P^2.
+\]
+Writing
+\[
+\rho^2=2-\frac BA,
+\]
+we find
+\[
+\rho\simeq2.00118.
+\]
+The exactly quartic-degenerate value is \(\rho=2\), for which
+\[
+H_4=A(Q^2-P^2)^2.
+\]
+
+Thus the present system lies extremely close to a quartic degeneracy in which the diagonal directions are null directions of the leading nonlinear Hamiltonian. Define
+\[
+\sigma=4-\rho^2.
+\]
+Numerically,
+\[
+\sigma\simeq-4.73\times10^{-3}.
+\]
+The smallness of this coefficient promotes the sixth-order Hamiltonian
+\[
+H_6=dQ^6+eQ^4P^2+fQ^2P^4+gP^6
+\]
+to leading order in the near-diagonal sector.
+
+The result is a two-scale local geometry. Along the axial directions,
+\[
+I_H\asymp\delta,\qquad |\mcJ_H|\asymp\delta^2.
+\]
+Near the almost-null diagonal directions, the leading scalar reduction is
+\[
+K_E(I)=-\delta I+A\sigma I^2+GI^3,
+\qquad G=d+e+f+g>0,
+\]
+and in the regime
+\[
+\deltax\ll\delta\ll1
+\]
+one obtains
+\[
+I_E\asymp\delta^{1/2},
+\qquad
+|\mcJ_E|\asymp\delta^{3/2}.
+\]
+
+The \(3/2\) law is an intermediate asymptotic in the sense of scaling regimes lying between microscopic and ultimate asymptotic behavior \cite{Barenblatt1996}. Since \(\sigma<0\) is fixed, the branch ultimately crosses over to a finite-amplitude plateau as \(\delta\to0^+\). Direct numerical solution of the exact second-return equation at resonance reveals the corresponding residual elliptic period-two cycles.
+
+The phenomenon considered here is distinct from the renormalization theory of repeated conservative period doubling \cite{GaidashevKoch2011}. We study a single semisimple local \(1{:}2\) resonance and the promotion of the sixth-order normal form caused by proximity to a quartic degeneracy; no period-doubling cascade or renormalization fixed point is assumed.
+
+The novelty of the present work is therefore not the \((2,3,5,7)\) Carnot algebra itself, but the identification and analysis of a near-degenerate reversible \(1{:}2\) resonance in its reduced geodesic flow. The quartic near-degeneracy promotes the sixth-order normal form and produces two distinct periodic-orbit action scales together with a crossover to residual elliptic period-two cycles.
+
+The exactly quartic-degenerate limit \(\sigma=0\) defines a separate higher-codimension problem and is not analyzed here.
